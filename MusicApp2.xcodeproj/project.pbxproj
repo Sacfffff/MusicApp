@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C5E8D7B285CB17300EEAA6E /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		6C7F80522859E6B2005DFC96 /* AuthResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponce.swift; sourceTree = "<group>"; };
 		6CA1DC4D285775DB00F29BB2 /* MusicApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA1DC50285775DB00F29BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		6CA1DC44285775DB00F29BB2 = {
 			isa = PBXGroup;
 			children = (
+				6C5E8D7B285CB17300EEAA6E /* .gitignore.md */,
 				6CA1DC4F285775DB00F29BB2 /* MusicApp2 */,
 				6CA1DC4E285775DB00F29BB2 /* Products */,
 			);
