@@ -13,8 +13,8 @@ final class AuthManager {
     static let shared = AuthManager()
     
    private enum Constants {
-        static let clienID = "24de390f182f4fdebe66e52273b02bc2"
-        static let clientSecret = "ad47a455dd1247ceaa97ba77365cf829"
+        static let clienID = ""
+        static let clientSecret = ""
         static let redirectUri = URL(string:"https://vk.com/ess_pls")
        static let tokenAPIURL = "https://accounts.spotify.com/api/token"
        static let basicToken = "\(Constants.clienID):\(Constants.clientSecret)".data(using: .utf8)?.base64EncodedString()
