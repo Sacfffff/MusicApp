@@ -17,12 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         if AuthManager.shared.isSignedIn {
+            AuthManager.shared.refreshIfNeeded(completion: nil)
             window?.rootViewController = TabBarViewController()
         } else {
-            let navigationVCForWelcomeVC = UINavigationController(rootViewController: WelcomeViewController())
-            navigationVCForWelcomeVC.navigationBar.prefersLargeTitles = true
-            navigationVCForWelcomeVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
-            window?.rootViewController = navigationVCForWelcomeVC
+            window?.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
         }
       
         window?.makeKeyAndVisible()
