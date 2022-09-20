@@ -24,7 +24,7 @@ final class BrowseFacade {
                     group.leave()
                 }
                 guard $1 == nil else {
-                    print($1!.localizedDescription)
+                    print($1!)
                     return
                 }
                     newReleases = $0
@@ -36,7 +36,7 @@ final class BrowseFacade {
                     group.leave()
                 }
                 guard $1 == nil else {
-                    print($1!.localizedDescription)
+                    print($1)
                     return
                 }
                 featuredPlaylist = $0
@@ -48,7 +48,7 @@ final class BrowseFacade {
                     group.leave()
                 }
                 guard $1 == nil else {
-                    print($1!.localizedDescription)
+                    print($1!)
                     return
                 }
                 recommendations = $0

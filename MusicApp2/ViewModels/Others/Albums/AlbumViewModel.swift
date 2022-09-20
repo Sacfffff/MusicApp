@@ -54,7 +54,7 @@ final class AlbumViewModel : AlbumViewModelProtocol {
                         return AlbumTrackListViewModel(songName: $0.name,
                                                        artistName: $0.artists.first?.name ?? "-")
                     }
-                } else {print(error!.localizedDescription)}
+                } else {print(error!)}
                 
             }
             

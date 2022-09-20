@@ -35,6 +35,7 @@ final class APICallerPlaylist {
     }
     
     func createPlaylist(with name: String, completion: @escaping (Result<Playlist,Error>) -> Void){
+        
         fetchDataProfile.fetchDataForProfile { [weak self] userData, _ in
             if let userData = userData {
                 let urlProfilePlaylists = Constants.baseAPIUrl + "/users/\(userData.id)/playlists"

@@ -44,11 +44,7 @@ final class Player {
         return nil
     }
  
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-        self.player = nil
-        self.playerQueue = nil
-    }
+   
     
     func playTrack(with track: AudioTrack){
         resetPlayers()

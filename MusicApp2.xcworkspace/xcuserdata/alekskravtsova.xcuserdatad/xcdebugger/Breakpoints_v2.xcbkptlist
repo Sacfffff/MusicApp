@@ -140,8 +140,8 @@
             filePath = "MusicApp2/Managers/APICallers/APICallerPlaylists.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "createPlaylist(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -188,10 +188,42 @@
             filePath = "MusicApp2/Managers/APICallers/APICallerPlaylists.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "createPlaylist(with:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1079E217-4F29-42D5-B099-A16DEB56BCC7 - 92229f0e732d6a4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MusicApp2.APICallerPlaylist.createPlaylist(with: Swift.String, completion: (Swift.Result&lt;MusicApp2.Playlist, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MusicApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alekskravtsova/Desktop/MusicApp/MusicApp2/Managers/APICallers/APICallerPlaylists.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "1079E217-4F29-42D5-B099-A16DEB56BCC7 - 4cebe4982fd40152"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;MusicApp2.UserProfile&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MusicApp2.APICallerPlaylist.createPlaylist(with: Swift.String, completion: (Swift.Result&lt;MusicApp2.Playlist, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MusicApp2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alekskravtsova/Desktop/MusicApp/MusicApp2/Managers/APICallers/APICallerPlaylists.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -18,7 +18,7 @@ struct Playlist : Codable {
         case owner
     }
     
-    let description : String?
+    let description : String
     let externalURLs : [String: String]
     let id : String
     let images : [APIImage]?

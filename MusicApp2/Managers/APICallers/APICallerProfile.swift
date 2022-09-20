@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class APICallerProfile {
  
@@ -25,7 +26,23 @@ final class APICallerProfile {
         }
     }
     
-            
+//    public func getCurrentUserProfile() -> Future<UserProfile, Error> {
+//        return Future<UserProfile, Error> { promise in
+//            self.requestSessionService.createRequest(with: URL(string: Constants.baseAPIUrl + Constants.userRequestAddingURL), type: .GET)
+//                .sink { [weak self] request in
+//                     self?.getCurrentUserProfile()
+//                        .sink(receiveCompletion: { completion in
+//                            switch completion {
+//                            case .failure(let error):
+//                                promise(.failure(error))
+//                            }
+//                        }, receiveValue: { value in
+//                            promise(.success(value))
+//                        })
+//                }
+//        }
+//
+//    }
 }
 
 
