@@ -43,6 +43,29 @@ final class Player {
         
         return nil
     }
+    var currentTime : Float {
+        if let player = player {
+            return Float(CMTimeGetSeconds(player.currentTime()))
+        } else if let playerQueue = playerQueue, let currentTrack = playerQueue.currentItem {
+            return Float(CMTimeGetSeconds(currentTrack.currentTime()))
+        }
+       
+        return 0.0
+       
+   }
+    
+    var duration : Float {
+        if let player = player,
+           let current = player.currentItem {
+            return Float(CMTimeGetSeconds(current.duration))
+        } else if let playerQueue = playerQueue,
+                   let current = playerQueue.currentItem {
+                    return Float(CMTimeGetSeconds(current.duration))
+     }
+        
+        return 0.0
+     
+    }
  
    
     
@@ -192,9 +215,11 @@ extension Player : PlayerViewControllerDelegate {
     
     func goForward() {
         if tracks.isEmpty {
+            player?.seek(to: .zero)
             player?.pause()
             player?.play()
         } else if let player = playerQueue {
+            playerQueue?.seek(to: .zero)
                 player.advanceToNextItem()
                 self.indexItem += self.indexItem == self.currentPlayerItems.count - 1 ? 0 : 1
                 self.delegatePlayerController?.updateUI()
@@ -206,9 +231,11 @@ extension Player : PlayerViewControllerDelegate {
     
     func goBackward() {
         if tracks.isEmpty{
+            player?.seek(to: .zero)
             player?.pause()
             player?.play()
         } else if let player = playerQueue {
+            playerQueue?.seek(to: .zero)
                self.indexItem -= self.indexItem <= 0 ? 0 : 1
             player.advanceToPreviousItem(at: self.indexItem, with: self.currentPlayerItems)
                 self.delegatePlayerController?.updateUI()

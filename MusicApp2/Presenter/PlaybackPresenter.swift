@@ -49,9 +49,19 @@ final class PlaybackPresenter {
 
 //MARK: - extension PlayerPresenterDataSource
 extension PlaybackPresenter : PlayerPresenterDataSource {
+    var currentTime: Float {
+        playerModel.currentTime
+    }
+    
+    var duration: Float {
+        playerModel.duration
+    }
+    
     var track: AudioTrack? {
         return playerModel.getCurrentTrack()
     }
+    
+  
     
 }
 

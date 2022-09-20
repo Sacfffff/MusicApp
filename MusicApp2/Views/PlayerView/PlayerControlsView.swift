@@ -20,14 +20,40 @@ protocol PlayerControlsViewDelegate : AnyObject {
 final class PlayerControlsView : UIView {
     
     weak var delegate : PlayerControlsViewDelegate?
+    weak var dataSource : PlayerPresenterDataSource?
     
     private var isPlaying : Bool = true
+    private lazy var displayLink : CADisplayLink = CADisplayLink(target: self, selector: #selector(updatePlayBackStatus))
     
-    private let volumeSlider : UISlider = {
+    private let slider : UISlider = {
         let slider = UISlider()
-        slider.value = 0.5
+        slider.value = 0.0
+        slider.isContinuous = false
+        slider.isUserInteractionEnabled = false
         slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
+    }()
+    
+    private let currentTimeLabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 12.0, weight: .thin)
+        return label
+    }()
+    
+    private let durationLabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 12.0, weight: .thin)
+        label.textColor = .label
+        return label
+    }()
+    
+    private let progressView : UIProgressView = {
+        let progressView = UIProgressView()
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        return progressView
     }()
     
     private let titleLabel : UILabel = {
@@ -109,14 +135,17 @@ final class PlayerControlsView : UIView {
     private func setup(){
         backgroundColor = .clear
         addSubview(titleLabel)
-        addSubview(volumeSlider)
-        volumeSlider.addTarget(self, action: #selector(didSlideSlider(_:)), for: .valueChanged)
+        addSubview(slider)
+        //slider.addTarget(self, action: #selector(didSlideSlider(_:)), for: .valueChanged)
         addSubview(subtitleLabel)
         addSubview(backwardButton)
         addSubview(nextButton)
         addSubview(playPauseButton)
         addSubview(addToPlaylistButton)
+        addSubview(durationLabel)
+        addSubview(currentTimeLabel)
         clipsToBounds = true
+        startUpdatingPlayBackStatus()
        
 
     }
@@ -159,6 +188,26 @@ final class PlayerControlsView : UIView {
         playPauseButton.setImage(isPlaying ? pause : play, for: .normal)
     }
     
+    private func startUpdatingPlayBackStatus() {
+        displayLink.add(to: .main, forMode: .common)
+    }
+    
+     private func stopUpdatingPlayBackStatus() {
+        displayLink.invalidate()
+        
+    }
+    
+    @objc private func updatePlayBackStatus(){
+        guard let dataSource = dataSource,
+        dataSource.duration.isFinite,
+        isPlaying else { return }
+        let currentTime = dataSource.currentTime / dataSource.duration
+        slider.setValue(currentTime, animated: true)
+        durationLabel.text = (Int(dataSource.duration).milisecondsToString())
+        currentTimeLabel.text = (Int(dataSource.currentTime).milisecondsToString())
+        progressView.setProgress(currentTime, animated: true)
+    }
+    
     private func setupConstraints(){
       
         NSLayoutConstraint.activate(
@@ -182,16 +231,25 @@ final class PlayerControlsView : UIView {
                 subtitleLabel.heightAnchor.constraint(equalToConstant: 44.0),
                 
                 
-                //volumeSlider
-                volumeSlider.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 20.0),
-                volumeSlider.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10.0),
-                volumeSlider.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10.0),
-                volumeSlider.heightAnchor.constraint(equalToConstant: 44.0),
+                //slider
+                slider.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 20.0),
+                slider.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10.0),
+                slider.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10.0),
+                slider.heightAnchor.constraint(equalToConstant: 44.0),
                 
+                //currentTimeLabel
+                currentTimeLabel.topAnchor.constraint(equalTo: slider.bottomAnchor),
+                currentTimeLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8.0),
+               
+                
+                //durationLabel
+                durationLabel.topAnchor.constraint(equalTo: slider.bottomAnchor),
+                durationLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8.0),
+               
                 
                 
                 //playPauseButton
-                playPauseButton.topAnchor.constraint(equalTo: volumeSlider.bottomAnchor, constant: 20.0),
+                playPauseButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 20.0),
                 playPauseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 playPauseButton.heightAnchor.constraint(equalToConstant: 60.0),
                 playPauseButton.widthAnchor.constraint(equalToConstant: 60.0),

@@ -114,6 +114,7 @@
 		6CE8D3B22887E8630034D771 /* LibraryAlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D3B12887E8630034D771 /* LibraryAlbumViewModel.swift */; };
 		6CE8D3B62887F2700034D771 /* LibraryAlbumsResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D3B52887F2700034D771 /* LibraryAlbumsResponce.swift */; };
 		6CE8D3B82888054E0034D771 /* Extension+Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8D3B72888054D0034D771 /* Extension+Notification.Name.swift */; };
+		6CF0671E28DA0EA2006A5D43 /* Extensions+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0671D28DA0EA2006A5D43 /* Extensions+Int.swift */; };
 		6CFDA230288AFBC900065F7B /* ProfileViewControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFDA22F288AFBC900065F7B /* ProfileViewControllerHeader.swift */; };
 		B3D1D201505D345C1CA8FD4F /* Pods_MusicApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506F5E3B997637F57A08C257 /* Pods_MusicApp2.framework */; };
 /* End PBXBuildFile section */
@@ -231,6 +232,7 @@
 		6CE8D3B12887E8630034D771 /* LibraryAlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumViewModel.swift; sourceTree = "<group>"; };
 		6CE8D3B52887F2700034D771 /* LibraryAlbumsResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsResponce.swift; sourceTree = "<group>"; };
 		6CE8D3B72888054D0034D771 /* Extension+Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Notification.Name.swift"; sourceTree = "<group>"; };
+		6CF0671D28DA0EA2006A5D43 /* Extensions+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Int.swift"; sourceTree = "<group>"; };
 		6CFDA22F288AFBC900065F7B /* ProfileViewControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerHeader.swift; sourceTree = "<group>"; };
 		FC7BAB8A11907ABA1097F7E3 /* Pods-MusicApp2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp2.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp2/Pods-MusicApp2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -738,6 +740,7 @@
 				6C29D60C28732BA7009F2ABF /* DateFormatter+String.swift */,
 				6C647F9F287EBAA10001192B /* AVQueuePlayer+ PreviousItem.swift */,
 				6CE8D3B72888054D0034D771 /* Extension+Notification.Name.swift */,
+				6CF0671D28DA0EA2006A5D43 /* Extensions+Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1071,6 +1074,7 @@
 				6CA1DC8C28577A5300F29BB2 /* ProfileViewController.swift in Sources */,
 				6C67C6102865F1AA0074EC9D /* User.swift in Sources */,
 				6CCF35D62871A8380039292D /* HeaderWithImageVViewModel.swift in Sources */,
+				6CF0671E28DA0EA2006A5D43 /* Extensions+Int.swift in Sources */,
 				6CA1DC6C285777F000F29BB2 /* APICallerBrowse.swift in Sources */,
 				6C6A0C732870A0D8004CB73C /* FetchDataServisePlaylist.swift in Sources */,
 				6C6A0C6C28707813004CB73C /* AlbumViewController.swift in Sources */,

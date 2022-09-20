@@ -20,6 +20,7 @@ final class HeaderWithImageCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .label
         return label
     }()
     
@@ -28,7 +29,7 @@ final class HeaderWithImageCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 2
-        label.textColor = .secondaryLabel
+        label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -45,7 +46,7 @@ final class HeaderWithImageCollectionReusableView: UICollectionReusableView {
     private let imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "photo"))
         imageView.contentMode = .scaleAspectFill
-        imageView.tintColor = .gray
+        imageView.tintColor = .secondaryLabel
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -58,7 +59,7 @@ final class HeaderWithImageCollectionReusableView: UICollectionReusableView {
     }()
     
     private let blurView : UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffect = UIBlurEffect(style: .regular)
         let view = UIVisualEffectView(effect: blurEffect)
         return view
     }()

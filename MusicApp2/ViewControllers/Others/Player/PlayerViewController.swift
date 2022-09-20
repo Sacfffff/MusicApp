@@ -75,6 +75,7 @@ class PlayerViewController: UIViewController {
         view.addSubview(controlsView)
         view.addSubview(spinner)
         controlsView.delegate = self
+        controlsView.dataSource = dataSource
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         swipeRight.direction = .right
         view.addGestureRecognizer(swipeRight)

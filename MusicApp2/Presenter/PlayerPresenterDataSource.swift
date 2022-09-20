@@ -9,4 +9,7 @@ import Foundation
 
 protocol PlayerPresenterDataSource : AnyObject {
     var track : AudioTrack? {get}
+    
+    var currentTime : Float {get}
+    var duration : Float {get}
 }
